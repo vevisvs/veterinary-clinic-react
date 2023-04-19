@@ -1,0 +1,44 @@
+.ctn-nav{
+    background-color: #E9FAFC;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+}
+
+.ctn-menu-list{
+    cursor: pointer;
+} 
+
+.desktop-menu{
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+}
+
+.desktop-menu li:hover{
+    color: #26a6b4;
+    font-weight: 700;
+}
+
+/* .desktop-menu li:hover::after{
+    content: "";
+
+} */
+
+.mobile-menu{
+    display: none;
+}
+
+
+@media screen and (max-width: 600px){
+    .desktop-menu{
+        display: none;
+    }
+
+    .mobile-menu{
+        display: flex;
+    }
+}
