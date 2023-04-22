@@ -1,0 +1,170 @@
+.ctn-header{
+    background-color: #E9FAFC;
+    width: 100%;
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 3rem;
+}
+
+.header-text{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 1300px;
+    justify-content: space-evenly;
+}
+
+.header-text h1{
+    font-size: 4rem;
+    width: 100%;
+    color: #2F2E3E;
+}
+
+.header-text h3{
+    width: 70%;
+    color: grey;
+}
+
+.header-photos{
+    width: 70%;
+    height: 100%;
+    position: relative;
+}
+
+.portrait{
+    width:100%;
+    object-fit: contain;
+    object-position: right;
+    height:100%;
+}
+
+.ctn-icons{
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    display: flex;
+}
+
+
+.header-button{
+    width: 20%;
+    padding: 0.3rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #1BA0AB;
+    color: white;
+    cursor: pointer;
+}
+
+.header-button:hover{
+    opacity: 0.7;
+}
+
+
+
+@media screen and (max-width: 1386.98px){
+    .header-text h1{
+        font-size: 3.5rem;
+    }
+}
+
+
+@media screen and (max-width: 1170px){
+    .ctn-header{
+        flex-direction: column;
+        height: 820px;
+    }
+
+    .header-text{
+        width: 100%;
+        align-items: center;
+        height: 70%;
+    }
+
+    .header-text h1{
+        text-align: center;
+        font-size: 4rem;
+    }
+
+    .header-text h3{
+        font-size: 1rem;
+        width: 60%;
+        text-align: center;
+    }
+
+    .header-photos{
+        width: 100%;
+        height: 70%;
+    }
+
+    .header-text h1{
+        font-size: 2rem; 
+    }
+
+    .portrait{
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .header-button{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .ctn-header{
+        height: 600px;
+        padding: 1.5rem;
+    }
+
+    .header-text h1{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .header-text h3{
+        width: 90%;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .header-button{
+        width: 30%;
+    }
+
+    .header-photos{
+        height: 300px;
+        width: 100%;
+    }
+
+    .portrait{
+        width: 100%;
+        object-fit: contain;
+        object-position: right;
+    }
+
+    .header-button{
+        width: 50%;
+    }
+}
+
+@media screen and  (max-width: 300px){
+    .ctn-header{
+        padding: 0.8rem;
+    }
+    .header-text{
+        height: 350px;
+    }
+    .header-photos{
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .header-button{
+        width: 60%;
+    }
+}

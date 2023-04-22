@@ -5,7 +5,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    position: fixed;
 }
 
 .menu-list{
@@ -40,6 +39,7 @@
   
   .sidebar {
     position: fixed;
+    z-index: 99;
     top: 0;
     left: -300px;
     width: 300px;
