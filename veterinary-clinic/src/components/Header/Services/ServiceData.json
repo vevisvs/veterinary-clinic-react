@@ -1,0 +1,32 @@
+[
+    {
+        "icon": "⚠",
+        "title": "Radiología",
+        "description": "Diagnóstico de patologías"
+    },
+    {
+        "icon": "🚑",
+        "title": "Ambulancia",
+        "description": "Contamos con una ambulancia preparada las 24hrs para cualquier emergencia"
+    },
+    {
+        "icon": "💀",
+        "title": "Unidad de cuidados intensivos",
+        "description": "texto aqui"
+    },
+    {
+        "icon": "💉",
+        "title": "Quirófano",
+        "description": "texto aqui"
+    },
+    {
+        "icon": "🏨",
+        "title": "Servicio de parto",
+        "description": "texto aqui"
+    },
+    {
+        "icon": "🐶",
+        "title": "Pet Shop",
+        "description": "texto aqui"
+    }
+]
