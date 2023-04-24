@@ -1,0 +1,41 @@
+.ctn-comments{
+    background-color: #F8FEFF;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comments-description{
+    width: 25%;
+}
+
+
+/* --- card ---- */ 
+
+.comments-card-section{
+    background-color: white;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-comment{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 30%;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.link-next-comment{
+    cursor: pointer;
+    font-size: 2rem;
+    color: #1BA0AB;
+    background-color: rgb(181, 235, 230);
+    border-radius: 50px;
+}
+
+.score{
+    color: rgb(241, 222, 50);
+}
+
