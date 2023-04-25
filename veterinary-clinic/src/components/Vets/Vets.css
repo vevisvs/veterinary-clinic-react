@@ -1,0 +1,80 @@
+.ctn-vets{
+    padding: 3rem;
+    background-color: #F8FEFF;
+}
+
+.ctn-vets-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    color: #2F2E3E;
+    align-items: center;
+}
+
+.link-vets{
+    color: #1BA0AB;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* --- cards vets ----*/
+
+.vets-preview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-vet{
+    width: 25rem;
+    height: 29rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-vet img{
+    width: 85%;
+    height: 80%;
+    border-radius: 8px;
+}
+
+.vet-field{
+    font-size: 0.8rem;
+}
+
+
+@media screen and (max-width: 768px){
+    .ctn-vets-title{
+        flex-direction: column;
+        height: 100px;
+        margin-bottom: 1.2rem;
+    }
+
+    .ctn-vets-title h1{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .ctn-vets{
+        padding: 1.5rem;
+    }
+    .ctn-vets-title{
+        height: 170px;
+        margin-bottom: 1rem;
+    }
+
+    .ctn-vets-title h1{
+        font-size: 1.6rem;
+    }
+
+    .card-vet{
+        width: 19rem;
+        height: 23rem;
+    }
+
+    
+}

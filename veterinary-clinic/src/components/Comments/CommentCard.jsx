@@ -6,12 +6,12 @@ const CommentCard = () => {
   return (
     <div className='card-comment'>
         <div className='card-text-info'>
-            <h2>Title</h2>
-            <p>Description</p>
+            <h2 className='comment-title'>Titulo del comentario</h2>
+            <p className='comment-text'>Esta es la descripcion del comentario</p>
         </div>
         <div className='card-user-info'>
             <img />
-            <p>Name</p>
+            <p className='comment-user'>Nombre usuario</p>
         </div>
         <span className='score'>
             <AiTwotoneStar />

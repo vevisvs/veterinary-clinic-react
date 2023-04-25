@@ -5,8 +5,13 @@
     justify-content: space-between;
 }
 
+.comment-title{
+    font-size: 1.1rem;
+}
+
 .comments-description{
     width: 25%;
+    font-size: 0.9rem;
 }
 
 
@@ -23,7 +28,8 @@
 .card-comment{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 30%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    border-radius: 35px 0px 35px 0px;
     padding: 1rem;
 }
 
@@ -33,9 +39,68 @@
     color: #1BA0AB;
     background-color: rgb(181, 235, 230);
     border-radius: 50px;
+    padding: 0 10px;
 }
 
 .score{
     color: rgb(241, 222, 50);
+}
+
+
+@media screen and (max-width: 768px){
+    .ctn-comments{
+        flex-direction: column;
+        align-items: center;
+       height: 250px;
+    }
+
+    .comments-title{
+        text-align: center;
+    }
+
+    .comments-description{
+        width: 90%;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .card-comment{
+        width: 100%;
+    }
+
+    .comments-card-section{
+        flex-direction: column;
+        padding: 2rem;
+        height: 350px;
+    }
+}
+
+
+@media screen and (max-width: 420px){
+    .ctn-comments{
+        padding: 1.5rem;
+        height: 220px;
+    }
+
+    .comments-description {
+        font-size: 0.9rem;
+    }
+
+    .comments-card-section{
+        padding: 1.5rem;
+        height: 330px;
+    }
+
+    .comment-title{
+        font-size: 1.1rem;
+    }
+
+    .comment-text{
+        font-size: 0.9rem;
+    }
+
+    .comment-user{
+        font-size: 0.9rem;
+    }
 }
 
