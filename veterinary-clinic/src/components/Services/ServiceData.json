@@ -1,31 +1,32 @@
+
 [
     {
-        "icon": "⚠",
+        "icon": "GiRadioactive",
         "title": "Radiología",
         "description": "Diagnóstico de patologías"
     },
     {
-        "icon": "🚑",
+        "icon": "FaAmbulance",
         "title": "Ambulancia",
         "description": "Contamos con una ambulancia preparada las 24hrs para cualquier emergencia"
     },
     {
-        "icon": "💀",
+        "icon": "TbCircuitResistor",
         "title": "Unidad de cuidados intensivos",
         "description": "texto aqui"
     },
     {
-        "icon": "💉",
+        "icon": "BiInjection",
         "title": "Quirófano",
         "description": "texto aqui"
     },
     {
-        "icon": "🏨",
+        "icon": "MdLocalHospital",
         "title": "Servicio de parto",
         "description": "texto aqui"
     },
     {
-        "icon": "🐶",
+        "icon": "MdOutlinePets",
         "title": "Pet Shop",
         "description": "texto aqui"
     }
