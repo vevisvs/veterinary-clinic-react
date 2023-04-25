@@ -1,0 +1,32 @@
+.ctn-footer{
+    padding: 3rem;
+    background-color: #F8FEFF;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-info-direction p{
+    font-size: 0.9rem;
+}
+
+.footer-icons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    font-size: 20px;
+    cursor: pointer;
+    color: #1BA0AB;
+}
+
+
+@media screen and (max-width: 420px){
+    .ctn-footer{
+        padding: 2rem;
+        height: 300px;
+        justify-content: space-evenly;
+    }
+    .footer-icons{
+        justify-content: flex-start;
+    }
+}
