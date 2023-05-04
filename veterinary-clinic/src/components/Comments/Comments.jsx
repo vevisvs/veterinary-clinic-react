@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Comments/Comments.css'
-import CommentCard from './CommentCard'
+import ModalComments from './ModalComments'
 
 const Comments = () => {
   return (
@@ -10,10 +10,7 @@ const Comments = () => {
             <p className='comments-description'>Puedes ver los comentarios y las puntuaciones de nuestros pacientes</p>
         </div>
         <div className='comments-card-section'>
-            <CommentCard />
-            <div className='next-button'>
-                <span className='link-next-comment'>🡺</span>
-            </div>
+            <ModalComments />  
         </div> 
   </>
   )

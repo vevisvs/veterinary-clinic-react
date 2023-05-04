@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Excelente servicio",
+        "message": "Quiero agradecer a todo el equipo de YourVet. La cirugía de nuestra gata Lexa fue impecable, se nota la dedicación y el amor por lo que hacen!",
+        "name": "Helena Mervolina",
+        "score": 4.8
+    },
+    {
+        "title": "Maravilloso equipo de trabajo",
+        "message": "Solicitamos el servicio de la ambulancia por una emergencia con nuestro perro Bobby. Llegaron en 15min a casa y lo intervinieron inmediatamente.",
+        "name": "Adrian Serinalli",
+        "score": 4.7
+    },
+    {
+        "title": "Profesionalismo y calidad",
+        "message": "En la pet shop siempre encuentro los mejores productos para mis mascotas y la atención de todo el personal es muy buena. Los recomiendo muy seguido!",
+        "name": "Rodrigo Spelorzi",
+        "score": 4.9
+    },
+    {
+        "title": "Muy buenos",
+        "message": "Excelentes profesionales y excelente atencion al público!",
+        "name": "Salma León",
+        "score": 4.8
+    }
+]
