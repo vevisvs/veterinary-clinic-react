@@ -3,31 +3,31 @@
     {
         "icon": "GiRadioactive",
         "title": "Radiología",
-        "description": "Diagnóstico de patologías"
+        "description": "Imagen por rayos X para diagnóstico de patologías y lesiones"
     },
     {
         "icon": "FaAmbulance",
         "title": "Ambulancia",
-        "description": "Contamos con una ambulancia preparada las 24hrs para cualquier emergencia"
+        "description": "Ambulancia preparada las 24hrs para cualquier emergencia"
     },
     {
         "icon": "TbCircuitResistor",
         "title": "Unidad de cuidados intensivos",
-        "description": "texto aqui"
+        "description": "Internación y tratamiento"
     },
     {
         "icon": "BiInjection",
         "title": "Quirófano",
-        "description": "texto aqui"
+        "description": "Cirugías ambulatorias"
     },
     {
         "icon": "MdLocalHospital",
         "title": "Servicio de parto",
-        "description": "texto aqui"
+        "description": "Para animales grandes y pequeños"
     },
     {
         "icon": "MdOutlinePets",
         "title": "Pet Shop",
-        "description": "texto aqui"
+        "description": "Medicamentos, alimentos y juguetes"
     }
 ]

@@ -1,6 +1,6 @@
 .ctn-modal{
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
     justify-content: space-evenly;
     width: 80%;
 }
@@ -69,6 +69,7 @@
 
 
 @media screen and (max-width: 768px){
+
     .ctn-comments{
         flex-direction: column;
         align-items: center;

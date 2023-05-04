@@ -9,6 +9,9 @@ const Header = () => {
   return (
     <div className='ctn-header'>
       <div className='header-text'>
+        <div className='job-title'>
+          <hr/><span> Clínica Veterinaria</span>
+        </div>
         <h1>Tu familia es importante para nosotros</h1>
         <h3>Estamos 24 horas al día disponibles para la salud de tus mascotas</h3>
         <button className='header-button'>Inicia sesión</button>

@@ -16,6 +16,23 @@
     justify-content: space-evenly;
 }
 
+.job-title{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #E79827;
+}
+
+.job-title span{
+    font-weight: 700;
+}
+
+hr{
+    width: 50px;
+    height: 5px;
+    background-color: #E79827;
+}
+
 .header-text h1{
     font-size: 4rem;
     width: 100%;
@@ -83,6 +100,10 @@
         height: 70%;
     }
 
+    hr{
+        display: none;
+    }
+
     .header-text h1{
         text-align: center;
         font-size: 4rem;
@@ -90,8 +111,9 @@
 
     .header-text h3{
         font-size: 1rem;
-        width: 60%;
+        width: 95%;
         text-align: center;
+        font-size: 0.8rem;
     }
 
     .header-photos{
@@ -118,6 +140,10 @@
     .ctn-header{
         height: 600px;
         padding: 1.5rem;
+    }
+
+    hr{
+        display: none;
     }
 
     .header-text h1{
