@@ -26,12 +26,13 @@ const Login = () => {
               <IoMdArrowRoundBack className='arrow' onClick={goBack} />
             </div>
             <div className='ctn-login'> 
+              <h1 className='login-title'>Iniciá sesión</h1>
               <form className='form-login'>
                 <div className='form-input'>
                   <input className='email-input' type="email" placeholder='usuario@email.com' required></input>
                 </div>
                 <div className='form-input'>
-                  <input className='password-input' type={showPassword ? 'text' : 'password'} placeholder='******' id='passcode' required></input>
+                  <input className='password-input' type={showPassword ? 'text' : 'password'} placeholder='Contraseña' id='passcode' required></input>
                   <span onClick={handleIcon}>
                     {showPassword ? <AiFillEyeInvisible className='eye-icon' /> : <IoMdEye className='eye-icon' />}
                   </span>
@@ -39,7 +40,7 @@ const Login = () => {
                 <button className='login-button'>Iniciar sesión</button>
                 <div className='reset-sign'>
                   <p className='reset'>¡Olvidé mi contraseña!</p>
-                  <p className='sign-in'><Link to="/signIn">Registrarme</Link></p>
+                  <p className='sign-in'><Link to="/register">Registrarme</Link></p>
                 </div>
               </form>
             </div>
