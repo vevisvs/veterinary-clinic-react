@@ -73,6 +73,10 @@ hr{
     background-color: #1BA0AB;
     color: white;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .header-button:hover{
