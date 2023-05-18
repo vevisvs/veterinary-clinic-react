@@ -5,6 +5,7 @@ import {AiFillTwitterCircle} from 'react-icons/ai'
 import {SiGmail} from 'react-icons/si'
 import {BsLinkedin} from 'react-icons/bs'
 
+
 const Footer = () => {
   return (
     <div className='ctn-footer'>

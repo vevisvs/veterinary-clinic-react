@@ -7,6 +7,7 @@ import Comments from '../../components/Comments/Comments'
 import Vets from '../../components/Vets/Vets'
 import Blog from '../../components/Blog/Blog'
 import Footer from '../../components/Footer/Footer'
+import ButtonWs from '../../components/ButtonWs/ButtonWs'
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
         <Vets />
         <Blog />
         <Footer />
+        <ButtonWs/>
     </div>
   )
 }
