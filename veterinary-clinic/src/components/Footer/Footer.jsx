@@ -8,7 +8,7 @@ import {BsLinkedin} from 'react-icons/bs'
 
 const Footer = () => {
   return (
-    <div className='ctn-footer'>
+    <div className='ctn-footer' id='contact'>
       <h1>YourVet</h1>
       <div className='footer-info-direction'>
         <p>Eulan Street 0012, New York</p>

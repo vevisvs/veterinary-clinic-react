@@ -4,7 +4,7 @@ import ServiceCard from './ServiceCard'
 
 const Services = () => {
   return (
-    <div className='ctn-services'>
+    <div className='ctn-services' id='services'>
         <div className='services-title'>
             <h1>¿Qué servicios ofrecemos?</h1>
             <span className='offer-text'>Estamos a tu servicio con todo el equipo médico y personal que necesites</span>

@@ -4,7 +4,7 @@ import dataVets from '../Vets/DataVet.json'
 
 const Vets = () => {
   return (
-    <div className='ctn-vets'>
+    <div className='ctn-vets' id='vets'>
         <div className='ctn-vets-title'>
             <h1>Nuestros veterinarios calificados</h1>
             <span className='link-vets'>Ver todos 🡲</span>

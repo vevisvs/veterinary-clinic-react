@@ -34,6 +34,14 @@
     display: none;
 }
 
+li a {
+  text-decoration: none;
+}
+
+li a:hover{
+  color:#26a6b4;
+}
+
 
 @media screen and (max-width: 600px){
     .navbar {

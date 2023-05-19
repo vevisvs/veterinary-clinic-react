@@ -19,10 +19,10 @@ const Navbar = () => {
       <div className={`sidebar ${sidebarOpen ? 'open' : 'desktop-version-menu'}`}>
         <div className='icon-close' onClick={() => setSidebarOpen(false)}><IoMdClose /></div>
         <ul className={ sidebarOpen ? 'sidebar-list' : 'menu-list'}>
-          <li>Home</li>
-          <li>Servicios</li>
-          <li>Veterinarios</li>
-          <li>Contacto</li>
+          <li><a href='.'>Home</a></li>
+          <li><a href='#services'>Servicios</a></li>
+          <li><a href='#vets'>Veterinarios</a></li>
+          <li><a href='#contact'>Contacto</a></li>
         </ul>
       </div>
     </div>
