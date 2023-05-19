@@ -18,6 +18,7 @@
     display: flex;
     list-style-type: none;
     gap: 1rem;
+    color:#3a3838;
 }
 
 .menu-list li:hover{
@@ -36,6 +37,7 @@
 
 li a {
   text-decoration: none;
+  color:#3a3838;
 }
 
 li a:hover{
