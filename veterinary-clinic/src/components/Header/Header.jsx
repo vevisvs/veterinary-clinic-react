@@ -12,7 +12,7 @@ const Header = () => {
         </div>
         <h1>Tu familia es importante para nosotros</h1>
         <h3>Estamos 24 horas al día disponibles para la salud de tus mascotas</h3>
-        <Link to='/login' className='header-button'>Inicia sesión</Link> 
+        {/* <Link to='/login' className='header-button'>Inicia sesión</Link>  */}
       </div>
       <div className='header-photos'>
         <img src={photo} className='portrait' alt='photo'/>
