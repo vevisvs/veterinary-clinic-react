@@ -18,6 +18,11 @@ const Login = () => {
     setShowPassword(!showPassword);
   }
 
+  const handleLoginUser = () => {
+    /* validar que el usuario haya ingresado la info en los inputs de email y username. 
+    Si el email existe en la base de datos, se da acceso. Sino, muestra un msj de error y le indica que debe registrarse para iniciar sesion */
+  }
+
   return (
         <>
           <Navbar />
@@ -40,7 +45,7 @@ const Login = () => {
                 <button className='login-button'>Iniciar sesión</button>
                 <div className='reset-sign'>
                   <p className='reset'>¡Olvidé mi contraseña!</p>
-                  <p className='sign-in'><Link to="/register">Registrarme</Link></p>
+                  <p className='sign-in' onClick={handleLoginUser}><Link to="/register">Registrarme</Link></p>
                 </div>
               </form>
             </div>

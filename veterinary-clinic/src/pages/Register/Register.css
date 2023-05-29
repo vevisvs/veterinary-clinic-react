@@ -31,13 +31,13 @@
     flex-direction: column;
 }
 
-.register-name, .register-lastname, .register-email, .register-passcode{
+.register-name, .register-lastname, .register-email, .register-passcode, .register-address, .register-phone{
     width: 90%;
     height: 12%;
 
 }
 
-.input-register-name, .input-register-lastname, .input-register-email, .input-register-passcode{
+.input-register-name, .input-register-lastname, .input-register-email, .input-register-passcode, .input-register-phone, .input-register-address{
     width: 100%;
     height: 100%;
     border-radius: 10px;
