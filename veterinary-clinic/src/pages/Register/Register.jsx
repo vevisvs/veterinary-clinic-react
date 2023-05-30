@@ -39,7 +39,7 @@ const Register = () => {
               },
             )
             .then(response => {
-              console.log(response.data);
+              console.log("respuesta:", response); //mensaje de exito
               if (response.status === 200 || response.status === 201) {
                 setName("");
                 setLastname("");

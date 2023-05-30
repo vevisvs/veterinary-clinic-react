@@ -5,10 +5,16 @@ import {IoMdArrowRoundBack} from "react-icons/io"
 import {IoMdEye} from "react-icons/io"
 import {AiFillEyeInvisible} from "react-icons/ai"
 import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const Login = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
+  const [error, setError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState("");
 
   const goBack = () => {
     navigate(-1);
@@ -18,10 +24,30 @@ const Login = () => {
     setShowPassword(!showPassword);
   }
 
-  const handleLoginUser = () => {
-    /* validar que el usuario haya ingresado la info en los inputs de email y username. 
-    Si el email existe en la base de datos, se da acceso. Sino, muestra un msj de error y le indica que debe registrarse para iniciar sesion */
-  }
+  /* validar que el usuario haya ingresado la info en los inputs de email y username. 
+    Si los datos son válidos, el servidor devuelve un token. Sino, muestra un msj de error */
+   const handleLoginUser = (e) => {
+        e.preventDefault();
+        if( email && password ){ 
+          axios.post('http://localhost:8080/login', {
+              email,
+              password
+          })
+            .then(response => {
+            console.log('usuario logueado correctamente', response.data); 
+            if(response.status === 200 || response.status === 201){
+              sessionStorage.setItem("token", response.data.token);
+              sessionStorage.setItem("email", email);
+              navigate("/")
+            }
+          })
+          .catch(error => console.log('Hubo un error', error));
+        } else {
+          console.log("faltan datos para completar el inicio de sesión")
+          setError(true)
+          setErrorMessage("No se pudo iniciar sesión")
+        }
+      }
 
   return (
         <>
@@ -31,21 +57,24 @@ const Login = () => {
               <IoMdArrowRoundBack className='arrow' onClick={goBack} />
             </div>
             <div className='ctn-login'> 
+            {
+              error && errorMessage
+            }
               <h1 className='login-title'>Iniciá sesión</h1>
               <form className='form-login'>
                 <div className='form-input'>
-                  <input className='email-input' type="email" placeholder='usuario@email.com' required></input>
+                  <input className='email-input' type="email" value={email} placeholder='usuario@email.com' onChange={(e) => setEmail(e.target.value)} required></input>
                 </div>
                 <div className='form-input'>
-                  <input className='password-input' type={showPassword ? 'text' : 'password'} placeholder='Contraseña' id='passcode' required></input>
+                  <input className='password-input' type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Contraseña' id='passcode' required></input>
                   <span onClick={handleIcon}>
                     {showPassword ? <AiFillEyeInvisible className='eye-icon' /> : <IoMdEye className='eye-icon' />}
                   </span>
                 </div>
-                <button className='login-button'>Iniciar sesión</button>
+                <button className='login-button' onClick={handleLoginUser}>Iniciar sesión</button>
                 <div className='reset-sign'>
                   <p className='reset'>¡Olvidé mi contraseña!</p>
-                  <p className='sign-in' onClick={handleLoginUser}><Link to="/register">Registrarme</Link></p>
+                  <p className='sign-in'><Link to="/register">Registrarme</Link></p>
                 </div>
               </form>
             </div>
