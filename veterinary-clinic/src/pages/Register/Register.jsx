@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import {IoMdArrowRoundBack} from "react-icons/io"
 import { useNavigate } from 'react-router-dom'
 import '../Register/Register.css'
 import { useState } from 'react'
 import axios from 'axios'
+import { UserContext } from '../../context/UserContext'
 
 const Register = () => {
     const navigate = useNavigate();
+    const {dataUser, setDataUser} = useContext(UserContext);
 
     const [name, setName] = useState("");
     const [lastname, setLastname] = useState("");
@@ -41,6 +43,7 @@ const Register = () => {
             .then(response => {
               console.log("respuesta:", response); //mensaje de exito
               if (response.status === 200 || response.status === 201) {
+                setDataUser(response.config.data); //agrego al userContext la informacion del nuevo usuario creado
                 setName("");
                 setLastname("");
                 setAddress("");
@@ -55,6 +58,7 @@ const Register = () => {
           setErrorRegisterMsj("Hubo un error. Inténtalo de nuevo.");
         }
       }
+      console.log("usuario agregado en el context:", dataUser)
   return (
     <>
         <Navbar />
