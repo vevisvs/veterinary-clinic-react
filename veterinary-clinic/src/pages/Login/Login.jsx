@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import '../Login/Login.css'
 import {IoMdArrowRoundBack} from "react-icons/io"
+import {MdOutlineError} from "react-icons/md"
 import {IoMdEye} from "react-icons/io"
 import {AiFillEyeInvisible} from "react-icons/ai"
 import { Link, useNavigate } from 'react-router-dom'
@@ -47,9 +48,9 @@ const Login = () => {
           })
           .catch(error => console.log('Hubo un error', error));
         } else {
-          console.log("faltan datos para completar el inicio de sesión")
+          console.log("datos incorrectos")
           setError(true)
-          setErrorMessage("No se pudo iniciar sesión")
+          setErrorMessage(`Email y/o contraseña inválidos.\n¡Inténtalo de nuevo!`)
         }
       }
 
@@ -62,7 +63,12 @@ const Login = () => {
             </div>
             <div className='ctn-login'> 
             {
-              error && errorMessage
+              error && (
+                <div className='error-container'>
+                  <MdOutlineError className='icon-error'/>
+                  <p>{errorMessage}</p>
+                </div>
+                )
             }
               <h1 className='login-title'>Iniciá sesión</h1>
               <form className='form-login'>
