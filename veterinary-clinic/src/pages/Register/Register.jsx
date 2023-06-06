@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import {IoMdArrowRoundBack} from "react-icons/io"
+import {MdOutlineError} from "react-icons/md"
 import { useNavigate } from 'react-router-dom'
 import '../Register/Register.css'
 import { useState } from 'react'
@@ -41,7 +42,7 @@ const Register = () => {
               },
             )
             .then(response => {
-              console.log("respuesta:", response); //mensaje de exito
+              console.log("respuesta:", response); //recibo un objeto de respuesta
               if (response.status === 200 || response.status === 201) {
                 setDataUser(response.config.data); //agrego al userContext la informacion del nuevo usuario creado
                 setName("");
@@ -50,15 +51,15 @@ const Register = () => {
                 setPhone("");
                 setEmail("");
                 setPassword("");
+                goBack(); //redirige al usuario al formulario de login automáticamente
               }
             })
             .catch(error => console.log(error));
         } else {
           setError(true);
-          setErrorRegisterMsj("Hubo un error. Inténtalo de nuevo.");
+          setErrorRegisterMsj("Debes completar todos los campos del formulario");
         }
       }
-      console.log("usuario agregado en el context:", dataUser)
   return (
     <>
         <Navbar />
@@ -67,7 +68,12 @@ const Register = () => {
         </div>
         <div className='ctn-register'>
             {
-                error ? errorRegisterMsj : ""
+                error ? (
+                  <div className='error-message-div'>
+                    <MdOutlineError className='error-icon'/>
+                    <p>{errorRegisterMsj}</p>
+                  </div>
+                  ) : ""
             }
             <h1 className='register-title'>Registrá tus datos y creá tu cuenta</h1>
             <form className='form-register' >
