@@ -65,7 +65,7 @@ hr{
 }
 
 
-.header-button{
+.header-button, .logout-button{
     width: 20%;
     padding: 0.3rem;
     border-radius: 5px;

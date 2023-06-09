@@ -10,7 +10,7 @@ import { UserContext } from '../../context/UserContext'
 
 const Register = () => {
     const navigate = useNavigate();
-    const {dataUser, setDataUser} = useContext(UserContext);
+    const {setDataUser} = useContext(UserContext);
 
     const [name, setName] = useState("");
     const [lastname, setLastname] = useState("");

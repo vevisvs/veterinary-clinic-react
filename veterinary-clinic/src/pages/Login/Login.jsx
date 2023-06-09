@@ -18,7 +18,7 @@ const Login = () => {
   const [error, setError] = useState(false)
   const [errorMessage, setErrorMessage] = useState("");
 
-  const {isLogged, setIsLogged} = useContext(UserContext);
+  const {setIsLogged, findUserByEmail} = useContext(UserContext);
 
   const goBack = () => {
     navigate(-1);
@@ -43,6 +43,8 @@ const Login = () => {
               sessionStorage.setItem("token", response.data.token);
               sessionStorage.setItem("email", email);
               setIsLogged(true);
+              //hacer el llamado de la funcion que busca al usuario por su email, trae toda su info y la guarda:
+              findUserByEmail(email);
               navigate("/");
             }
           })
@@ -56,7 +58,7 @@ const Login = () => {
 
   return (
         <>
-          <Navbar />
+          <Navbar /> 
           <div className='container-login-form'>
             <div className='icon-direction'>
               <IoMdArrowRoundBack className='arrow' onClick={goBack} />
