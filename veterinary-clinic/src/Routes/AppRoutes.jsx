@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login/login';
 import Register from '../pages/Register/Register';
+import Booking from '../pages/Booking/Booking'
 import { UserProvider } from '../context/UserContext';
 
 const AppRoutes = () => {
@@ -12,6 +13,7 @@ const AppRoutes = () => {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/booking' element={<Booking />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>
