@@ -1,14 +1,17 @@
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import '../Booking/Booking.css'
+import catImage from '../../assets/cat5.jpg'
 
 const Booking = () => {
   return (
     <>
       <Navbar />
       <div className='ctn-booking'>
-        <h1>Iniciá una reserva</h1>
-        <form className='booking-form'>
+        <img src={catImage} className='booking-img'></img>
+        <div className='form-data-ctn'>
+          <h1 className='title-booking-form'>Iniciá una reserva</h1>
+          <form className='booking-form'>
             <div className='booking-info'>
                 <h3>Datos de la consulta</h3>
                 <input className='book-input' type='date' placeholder='Seleccione la fecha'></input>
@@ -32,7 +35,10 @@ const Booking = () => {
                 <input className='book-input' type='text' placeholder='Raza'></input>
             </div>
         </form>
+        <button className='booking-btn'>Crear reserva</button>
+        </div>
       </div>
+      
     </>
   )
 }

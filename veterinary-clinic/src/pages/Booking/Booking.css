@@ -1,24 +1,36 @@
 .ctn-booking{
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 100vh;
+    height: calc(100vh - 81px);
+    width: 100vw;
 }
 
-.ctn-booking h1{
-    font-size: 1rem;
+.title-booking-form{
+    margin: 1.5rem 0 1.5rem 0;
+    font-size: 1.8rem;
+}
+
+.booking-img{
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.form-data-ctn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }
 
 .booking-form{
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
-    border: 1px solid rgb(138, 135, 135);
-    width: 500px;
-    height: 720px;
+    width: 90%;
+    height: 400px;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #F8FEFF;
 }
 
 .booking-info, .booking-info-customer, .booking-info-pet{
@@ -27,21 +39,71 @@
     align-items: center;
     flex-direction: column;
     gap: 0.5rem;
+    width: 33%;
 }
 
 .book-input{
-    /* width: 70%;
-    height: 22%; */
     padding: 0.5rem;
     border: none;
     border-radius: 5px;
-    width: 70%;
+    width: 90%;
 }
 
 .b-description{
-    width: 70%;
-    border: 0.8px solid grey;
+    width: 90%;
+    border: none;
     border-radius: 5px;
     padding: 0.5rem;
     resize: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 5px;
+}
+
+.booking-btn{
+    padding: 0.6rem;
+    background-color: #1BA0AB;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 1.5rem 0 1.5rem 0;
+}
+
+
+@media screen and (max-width: 1285px){
+    .ctn-booking{
+        flex-direction: column;
+    }
+
+    .booking-img{
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        object-position:center;
+    }
+
+    .form-data-ctn{
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 785px){
+    .booking-form{
+        flex-direction: column;
+        height: 820px;
+        width: 90%;
+    }
+
+    .form-data-ctn{
+        flex-direction: column;
+    }
+
+    .booking-info, .booking-info-customer, .booking-info-pet{
+        width: 100%;
+    }
+
+    .title-booking-form{
+        font-size: 1.4rem;
+    }
 }
