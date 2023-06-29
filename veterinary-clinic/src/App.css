@@ -9,3 +9,7 @@ html{
   scroll-behavior: smooth;
 }
 
+input, select{
+  background-color: #E9FAFC;
+}
+
