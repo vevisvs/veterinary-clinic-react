@@ -36,6 +36,12 @@
     opacity: 0.8;
 }
 
+.info-button a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
 
 @media screen and (min-width: 769px) and (max-width: 1200px){
     .ctn-information{
