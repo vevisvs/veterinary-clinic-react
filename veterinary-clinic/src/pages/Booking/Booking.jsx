@@ -12,7 +12,7 @@ import { format } from 'date-fns';
 
 const Booking = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [vetList, setVetList] = useState("")
+  const [vetList, setVetList] = useState([])
 
   //data inicial del form
   const initialState = {
@@ -81,22 +81,6 @@ const Booking = () => {
     console.log("value input:", value)
   }
 
-  // const handleDateChange = (date) => {
-  //   handleInputChange("dataConsulta", "fecha", date);
-  // };
-
-  // const handleDateChange = (date) => {
-  //   const selectedDateTime = setMinutes(setHours(selectedDate, date.getHours()), date.getMinutes());
-  //   setSelectedDate(selectedDateTime);
-  //   handleInputChange("dataConsulta", "fecha", selectedDateTime);
-  // };
-
-  // const handleDateChange = (date) => {
-  //   const selectedDateTime = setMinutes(setHours(new Date(date.getFullYear(), date.getMonth(), date.getDate()), parseInt(date.getHours())), parseInt(date.getMinutes()));
-  //   setSelectedDate(selectedDateTime);
-  //   handleInputChange("dataConsulta", "fecha", selectedDateTime);
-  // };
-
   const handleDateChange = (date) => {
     const formattedDate = format(date, "yyyy-MM-dd'T'HH:mm:ss");
     setSelectedDate(date);
@@ -121,17 +105,14 @@ const Booking = () => {
     }
   }
 
-
   useEffect(() => {
-    axios.get('http://localhost:8080/vetlist')
+    axios.get('http://localhost:8080/vet/list')
       .then(response => {
         console.log("listando veterinarios...")
         setVetList(response.data)
       })
   }, [])
       
- 
-
   return (
     <>
       <Navbar />
@@ -142,12 +123,6 @@ const Booking = () => {
           <form className='booking-form'>
             <div className='booking-info'>
                 <h3>Datos de la consulta</h3>
-                {/* <input className='book-input' 
-                  type='date' 
-                  value={state.dataConsulta.fecha} 
-                  placeholder='Seleccione la fecha' 
-                  onChange={e => handleInputChange('dataConsulta', 'fecha', e.target.value)}>
-                </input> */}
                   <DatePicker 
                     value={selectedDate}
                     selected={selectedDate}
@@ -163,31 +138,14 @@ const Booking = () => {
                     minTime={setHours(setMinutes(new Date(), 0), 8)}
                     maxTime={setHours(setMinutes(new Date(), 30), 20)}
                   /> 
-                {/* <input className='book-input' 
-                  type='text' 
-                  value={state.dataConsulta.horario} 
-                  placeholder='Seleccione el horario'
-                  onChange={e => handleInputChange('dataConsulta', 'horario', e.target.value)}>
-                </input> */}
-
-                <input className='book-input' 
-                  type='text' 
-                  value={state.dataConsulta.nombreVeterinario} 
-                  placeholder='Nombre del veterinario'
-                  onChange={e => handleInputChange('dataConsulta', 'nombreVeterinario', e.target.value)}>
-                </input>
-
-                <select defaultValue={1} className='book-input'>
-                  <option value="Selecciona un veterinario">
-                    {/* {
-                      vetList.map(vet => {
-                         <option value={state.dataConsulta.nombreVeterinario}
-                          onChange={e => handleInputChange('dataConsulta', 'nombreVeterinario', e.target.value)}>{vet.name}, {vet.surname}</option>
-                      })
-                    } */}
-                  </option>
+                <select defaultValue={1} className='book-input' onChange={e => handleInputChange('dataConsulta', 'nombreVeterinario', e.target.value)}>
+                  <option value={1} disabled>Selecciona un veterinario</option>
+                  {
+                    vetList?.map(vet => (
+                      <option key={vet.id} value={vet.name}>{vet.name}, {vet.surname}</option>
+                    ))
+                  }
                 </select>
-
                 <textarea className='b-description' 
                   value={state.dataConsulta.motivoConsulta} 
                   placeholder='Describa el motivo de consulta'
