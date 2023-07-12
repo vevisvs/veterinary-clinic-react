@@ -22,7 +22,6 @@ const Register = () => {
     const [error, setError] = useState(false);
     const [errorRegisterMsj, setErrorRegisterMsj] = useState("");
 
-    const role = 1;
 
     const goBack = () => {
         navigate(-1);
@@ -33,7 +32,7 @@ const Register = () => {
           setError(false);
           axios
             .post(
-              "http://localhost:8080/customer/add",
+              "http://localhost:8080/customer/addCustomer",
               {
                 name: name,
                 lastName: lastname,
@@ -41,7 +40,6 @@ const Register = () => {
                 contactNumber: Number(phone),
                 email: email,
                 password: password,
-                roleId: role
               },
             )
             .then(response => {

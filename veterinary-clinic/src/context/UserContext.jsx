@@ -18,7 +18,7 @@ const dataUserLogged = {
     lastName: "",
     address: "",
     contactNumber: "",
-    email: ""
+    email: "",
 }
 
 // hacer el llamado de una peticion, buscar el usuario por su email y guardar la data recibida en un state:

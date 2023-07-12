@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import '../Booking/Booking.css'
 import catImage from '../../assets/cat5.jpg'
@@ -8,9 +8,10 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {setHours, setMinutes, addDays} from 'date-fns';
 import { format } from 'date-fns';
-
+import { UserContext } from '../../context/UserContext'
 
 const Booking = () => {
+  const { userLogged } = useContext(UserContext);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [vetList, setVetList] = useState([])
 
@@ -18,7 +19,6 @@ const Booking = () => {
   const initialState = {
     dataConsulta: {
       fecha: '',
-      horario: '',
       nombreVeterinario: '',
       motivoConsulta: ''
     },
@@ -37,21 +37,6 @@ const Booking = () => {
     },
   }
 
-  // const formBookingReducer = (state, action) => {
-  //   switch (action.type) {
-  //     case 'UPDATE_FIELD':
-  //       return {
-  //         ...state,
-  //         [action.section]: {
-  //           ...state[action.section],
-  //           // [action.field]: action.value
-  //           [action.field]: action.field === 'fecha' ? action.value.toISOString() : action.value
-  //         }
-  //       };
-  //     default:
-  //       return state;
-  //   }
-  // };
   const formBookingReducer = (state, action) => {
     switch (action.type) {
       case 'UPDATE_FIELD':
@@ -78,13 +63,13 @@ const Booking = () => {
       field,
       value
     });
-    console.log("value input:", value)
   }
 
   const handleDateChange = (date) => {
     const formattedDate = format(date, "yyyy-MM-dd'T'HH:mm:ss");
     setSelectedDate(date);
     handleInputChange('dataConsulta', 'fecha', formattedDate);
+    console.log(formattedDate)
   };
 
   const handleBooking = (e) => {
@@ -112,6 +97,8 @@ const Booking = () => {
         setVetList(response.data)
       })
   }, [])
+
+  console.log("data del form:", state)
       
   return (
     <>
@@ -147,7 +134,7 @@ const Booking = () => {
                   }
                 </select>
                 <textarea className='b-description' 
-                  value={state.dataConsulta.motivoConsulta} 
+                  value={state.initialState?.dataConsulta?.motivoConsulta} 
                   placeholder='Describa el motivo de consulta'
                   onChange={e => handleInputChange('dataConsulta', 'motivoConsulta', e.target.value)}>
                 </textarea>
@@ -156,31 +143,36 @@ const Booking = () => {
                 <h3>Datos del propietario</h3>
                 <input className='book-input' 
                   type='text' 
-                  value={state.dataPropietario.nombre} 
+                  // value={state.dataPropietario.nombre} 
+                  value={userLogged?.name}
                   placeholder='Nombre'
                   onChange={e => handleInputChange('dataPropietario', 'nombre', e.target.value)}>
                 </input>
                 <input className='book-input' 
                   type='text' 
-                  value={state.dataPropietario.apellido} 
+                  // value={state.dataPropietario.apellido} 
+                  value={userLogged?.lastName}
                   placeholder='Apellido'
                   onChange={e => handleInputChange('dataPropietario', 'apellido', e.target.value)}>
                 </input>
                 <input className='book-input' 
                   type='text' 
-                  value={state.dataPropietario.email} 
+                  // value={state.dataPropietario.email} 
+                  value={userLogged?.email}
                   placeholder='email'
                   onChange={e => handleInputChange('dataPropietario', 'email', e.target.value)}>
                 </input>
                 <input className='book-input' 
                   type='number' 
-                  value={state.dataPropietario.numero} 
+                  // value={state.dataPropietario.numero} 
+                  value={userLogged?.contactNumber}
                   placeholder='Número'
                   onChange={e => handleInputChange('dataPropietario', 'numero', e.target.value)}>
                 </input>
                 <input className='book-input' 
                   type='text' 
-                  value={state.dataPropietario.direccion} 
+                  // value={state.dataPropietario.direccion} 
+                  value={userLogged?.address}
                   placeholder='Dirección'
                   onChange={e => handleInputChange('dataPropietario', 'direccion', e.target.value)}>
                 </input>
